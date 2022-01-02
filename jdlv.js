@@ -40,7 +40,6 @@ uknownPictureStart()
 const nbCol = hCanva / space;
 const nbLign = lCanva / space;
 const field = new Array();
-//
 
 const nextStepStatusfield = () => {
     let nextStepField = new Array();
