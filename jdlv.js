@@ -48,6 +48,7 @@ const nextStepStatusfield = () => {
         for (let j=0; j<nbLign; j++){
             nextStepField[i][j] = 0; //nouvelle grille
             initialField = field[i][j]; // grille initial
+            let n = nbNeigbours();
             // conditions règles
             if((initialField == 0) && ("nombre de voisine" == 3)){
                 nextStepField[i][j] = 1
@@ -59,18 +60,22 @@ const nextStepStatusfield = () => {
     }
 }
 
-const nbNeigbours = () => {
+const nbNeigbours = (x, y) => {
     // Pour chaque cellule
     // déplacemement possible seulement sur l'intervale [-1; 1]
     // ou 0 correspond à la position de la cellule sur lequel on se trouve
     // recuperer l'abscisse de la cellule sur lequelle on se trouve
     // faire deux boucles for imbriqués (nbCol et nbLign) 
     // allant de -1 à 2 sur l'intervalle [-1; 2[
+    let n = 0;
     for(let i = -1; i<2; i++){
         for(let j = -1; i < 2; j++){
-            // réfléchir à la suite
+            if((i!=0)&&(j!=0)){ // 0 étant la cellule courante
+                // réfléchir à la suite
+            }
         }
     }
+    return n // nombre total de cellules oisines
 }
 
 const fillfield = () => {
