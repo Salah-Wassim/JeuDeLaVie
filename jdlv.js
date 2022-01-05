@@ -47,7 +47,7 @@ const nextStepStatusfield = () => {
         nextStepField[i] = new Array()
         for (let j=0; j<nbLign; j++){
             nextStepField[i][j] = 0; //nouvelle grille
-            initialField = field[i][j]; // grille initial
+            let initialField = field[i][j]; // grille initial
             let n = nbNeigbours(); // réflechir pour les arguments
             // conditions règles
             if((initialField == 0) && (n == 3)){
