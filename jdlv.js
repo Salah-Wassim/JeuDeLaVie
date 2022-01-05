@@ -48,16 +48,20 @@ const nextStepStatusfield = () => {
         for (let j=0; j<nbLign; j++){
             nextStepField[i][j] = 0; //nouvelle grille
             initialField = field[i][j]; // grille initial
-            let n = nbNeigbours();
+            let n = nbNeigbours(); // réflechir pour les arguments
             // conditions règles
-            if((initialField == 0) && ("nombre de voisine" == 3)){
+            if((initialField == 0) && (n == 3)){
                 nextStepField[i][j] = 1
             }
-            if((initialField == 1) && ("nombre de voisine" <= 1 || "nombre de voisine" >= 4)){
+            if((initialField == 1) && (n <= 1 || n >= 4)){
                 nextStepField[i][j]
+            }
+            if(((initialField == 1) || (initialField == 0)) && (n == 2)){
+                initialField;
             }
         }
     }
+    initialField = nextStepField;
 }
 
 const nbNeigbours = (x, y) => {
@@ -68,9 +72,13 @@ const nbNeigbours = (x, y) => {
     // faire deux boucles for imbriqués (nbCol et nbLign) 
     // allant de -1 à 2 sur l'intervalle [-1; 2[
     let n = 0;
+    let xPrime;
+    let yPrime;
     for(let i = -1; i<2; i++){
         for(let j = -1; i < 2; j++){
-            if((i!=0)&&(j!=0)){ // 0 étant la cellule courante
+            xPrime = x + i;
+            yPrime = y + j;
+            if((i!=0)&&(j!=0)){ // 0 étant la position de la cellule courante
                 // réfléchir à la suite
             }
         }
